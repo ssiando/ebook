@@ -42,6 +42,7 @@ import {
   AuthAccountDeactivatedPage,
   AuthWelcomeMessagePage,
 } from '@/pages/auth';
+import { BookListPage } from '@/pages/book-management';
 import { DefaultPage, Demo1DarkSidebarPage } from '@/pages/dashboards';
 import {
   NetworkAppRosterPage,
@@ -92,6 +93,12 @@ import {
   StoreClientPage,
   WishlistPage,
 } from '@/pages/store-client';
+import {
+  MenuManagementPage,
+  RoleManagementPage,
+  RoleMenuManagementPage,
+  UserManagementPage,
+} from '@/pages/system';
 import { Navigate, Route, Routes } from 'react-router';
 
 export function AppRoutingSetup() {
@@ -378,6 +385,23 @@ export function AppRoutingSetup() {
           <Route
             path="/store-admin/inventory/all-products"
             element={<AllProductsPage />}
+          />
+          <Route path="/book-management/book-list" element={<BookListPage />} />
+          <Route
+            path="/system/user-management"
+            element={<UserManagementPage />}
+          />
+          <Route
+            path="/system/menu-management"
+            element={<MenuManagementPage />}
+          />
+          <Route
+            path="/system/role-management"
+            element={<RoleManagementPage />}
+          />
+          <Route
+            path="/system/role-menu-management"
+            element={<RoleMenuManagementPage />}
           />
           <Route path="/auth/get-started" element={<AccountGetStartedPage />} />
         </Route>

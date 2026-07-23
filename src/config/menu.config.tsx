@@ -393,6 +393,23 @@ export const MENU_SIDEBAR: MenuConfig = [
   { title: 'Store - Services', icon: Codepen, disabled: true },
   { title: 'AI Promt', icon: Theater, disabled: true },
   { title: 'Invoice Generator', icon: ScrollText, disabled: true },
+  { heading: '시스템' },
+  {
+    title: '시스템',
+    icon: Settings,
+    children: [
+      { title: '사용자 관리', path: '/system/user-management' },
+      { title: '메뉴 관리', path: '/system/menu-management' },
+      { title: '역할 관리', path: '/system/role-management' },
+      { title: '역할별 메뉴관리', path: '/system/role-menu-management' },
+    ],
+  },
+  { heading: '도서 관리' },
+  {
+    title: '도서 관리',
+    icon: Book,
+    children: [{ title: '도서 목록', path: '/book-management/book-list' }],
+  },
 ];
 
 export const MENU_SIDEBAR_CUSTOM: MenuConfig = [
