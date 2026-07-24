@@ -32,6 +32,7 @@ import {
   LayoutGrid,
   LifeBuoy,
   MessageSquare,
+  Mic,
   Monitor,
   Network,
   Users as PeopleIcon,
@@ -409,6 +410,29 @@ export const MENU_SIDEBAR: MenuConfig = [
     title: '도서 관리',
     icon: Book,
     children: [{ title: '도서 목록', path: '/book-management/book-list' }],
+  },
+  { heading: '암송 관리' },
+  {
+    title: '암송 관리',
+    icon: Mic,
+    children: [
+      { title: '암송 구절 관리', path: '/verse-management/verse-list' },
+      { title: '챌린지 관리', path: '/verse-management/challenge-management' },
+      { title: '사용자 학습현황 조회', path: '/verse-management/study-status' },
+      { title: '공지사항 관리', path: '/verse-management/notice-management' },
+    ],
+  },
+  { heading: '마음판 (사용자 앱)' },
+  {
+    title: '마음판 (사용자 앱)',
+    icon: Heart,
+    children: [
+      { title: '홈', path: '/verse-app/home' },
+      { title: '암송', path: '/verse-app/recite' },
+      { title: '학습관리', path: '/verse-app/study' },
+      { title: '챌린지', path: '/verse-app/challenge' },
+      { title: 'My', path: '/verse-app/my' },
+    ],
   },
 ];
 

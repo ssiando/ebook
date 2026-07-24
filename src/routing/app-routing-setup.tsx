@@ -2,6 +2,7 @@ import { AuthRouting } from '@/auth/auth-routing';
 import { RequireAuth } from '@/auth/require-auth';
 import { ErrorRouting } from '@/errors/error-routing';
 import { Demo1Layout } from '@/layouts/demo1/layout';
+import { VerseAppLayout } from '@/layouts/verse-app/layout';
 import {
   AccountActivityPage,
   AccountAllowedIPAddressesPage,
@@ -99,6 +100,19 @@ import {
   RoleMenuManagementPage,
   UserManagementPage,
 } from '@/pages/system';
+import {
+  ChallengeManagementPage,
+  NoticeManagementPage,
+  StudyStatusPage,
+  VerseListPage,
+} from '@/pages/verse-management';
+import {
+  ChallengePage,
+  HomePage,
+  MyPage,
+  RecitePage,
+  StudyPage,
+} from '@/pages/verse-app';
 import { Navigate, Route, Routes } from 'react-router';
 
 export function AppRoutingSetup() {
@@ -403,7 +417,31 @@ export function AppRoutingSetup() {
             path="/system/role-menu-management"
             element={<RoleMenuManagementPage />}
           />
+          <Route
+            path="/verse-management/verse-list"
+            element={<VerseListPage />}
+          />
+          <Route
+            path="/verse-management/challenge-management"
+            element={<ChallengeManagementPage />}
+          />
+          <Route
+            path="/verse-management/study-status"
+            element={<StudyStatusPage />}
+          />
+          <Route
+            path="/verse-management/notice-management"
+            element={<NoticeManagementPage />}
+          />
           <Route path="/auth/get-started" element={<AccountGetStartedPage />} />
+        </Route>
+        <Route path="/verse-app" element={<VerseAppLayout />}>
+          <Route index element={<Navigate to="home" replace />} />
+          <Route path="home" element={<HomePage />} />
+          <Route path="recite" element={<RecitePage />} />
+          <Route path="study" element={<StudyPage />} />
+          <Route path="challenge" element={<ChallengePage />} />
+          <Route path="my" element={<MyPage />} />
         </Route>
       </Route>
       <Route path="error/*" element={<ErrorRouting />} />
